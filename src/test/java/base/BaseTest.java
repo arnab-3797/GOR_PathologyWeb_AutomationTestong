@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.WebDriver;
 
@@ -13,6 +14,7 @@ public class BaseTest{
 	public static Properties config = new Properties();
 	public static Properties or = new Properties();
 	public static FileInputStream fileinput;
+	public static Logger log = Logger.getLogger(BaseTest.class.getName());
 
 	public void setup(){
 		
@@ -51,10 +53,6 @@ public class BaseTest{
 		or.getProperty("password");
 		or.getProperty("loginbtn");
 		or.getProperty("setpasswordbtn");
-		
-		
-		
-		
 		
 		config.getProperty("browser");
 		config.getProperty("url");
