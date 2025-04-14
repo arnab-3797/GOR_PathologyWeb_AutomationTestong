@@ -1,6 +1,7 @@
 package utilities;
 
 import java.io.File;
+import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,8 +13,10 @@ public class TestUtils extends BaseTest {
 	
 	public static void takeScreenShots() {
 		
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File targerFile = new File(System.getProperty("user.dir")+"//target//screenShots//error.jpg");
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 	
+		Date date= new Date();
+		String screenShotsName = date.toString().replace(":", "_").replace(" ", "_");
+		File targerFile = new File(System.getProperty("user.dir")+"//target//screenShots//"+screenShotsName+".jpg");
 		srcFile.renameTo(targerFile);
 	}
 
