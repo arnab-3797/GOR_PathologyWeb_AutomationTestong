@@ -1,24 +1,17 @@
 package utilities;
 
 
-import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.Markup;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReportManager {
 	
 	private static ExtentReports extentreport;
-	private static ExtentSparkReporter htmlrepoter;
-	private static ExtentTest testreport;
 	
-	public static void setReport() {
-		htmlrepoter = new ExtentSparkReporter("./Reports/HTML/extent.html");
+	
+	public static ExtentReports createInstance(String fileName) {
+		ExtentSparkReporter htmlrepoter = new ExtentSparkReporter(fileName);
 		htmlrepoter.config().setEncoding("utf-8");
 		htmlrepoter.config().setDocumentTitle("GOR Pathology and Diagonistic Project Report");
 		htmlrepoter.config().setReportName("Automation Test Report");
@@ -31,26 +24,39 @@ public class ExtentReportManager {
 		extentreport.setSystemInfo("Build NO: ","12344");
 		extentreport.setSystemInfo("Organization","hag");
 		
+		return extentreport;
 		
 	} 
-	
+	/*
 	public static void updateResult(ITestResult result) {
 		
 		if(result.getStatus()==ITestResult.FAILURE) {
 			
-			Markup markup = MarkupHelper.createLabel("Test case failed", ExtentColor.RED);
+			String methodName = result.getMethod().getMethodName();
+			Markup markup = MarkupHelper.createLabel("Test case failed: " + methodName.toUpperCase(), ExtentColor.RED);
 			testreport.fail(markup);
+			
 		}else if (result.getStatus()==ITestResult.SUCCESS) {
 			
-			
+			String methodName = result.getMethod().getMethodName();
+			Markup markup = MarkupHelper.createLabel("Test case Passed: " + methodName.toUpperCase(), ExtentColor.GREEN);
+			testreport.pass(markup);
 			
 		}else if(result.getStatus()==ITestResult.SKIP){
+			
+			String methodName = result.getMethod().getMethodName();
+			Markup markup = MarkupHelper.createLabel("Test case skip: " + methodName.toUpperCase(), ExtentColor.YELLOW);
+			testreport.skip(markup);
 			
 		}
 	}
 	
 	public static void endRepoter() {
-		extentreport.flush();
-	}
+		
+		if(extentreport != null) {
+			extentreport.flush();
+		}
+		
+	} */
 
 }
