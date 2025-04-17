@@ -5,6 +5,7 @@
     <classes>
       <class name="testCases.LoginTest">
         <methods>
+          <include name="tearDown"/>
           <include name="doLogin"/>
         </methods>
       </class> <!-- testCases.LoginTest -->

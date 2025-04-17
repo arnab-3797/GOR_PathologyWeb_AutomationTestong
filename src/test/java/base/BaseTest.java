@@ -3,6 +3,7 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -10,11 +11,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	public RemoteWebDriver driver;
 	private Properties config = new Properties();
 	private Properties or = new Properties();
 	private FileInputStream fileinput;
@@ -57,13 +60,13 @@ public class BaseTest {
 			if(config.getProperty("browser").equals("chrome")) {
 				
 				
-				ChromeDriver driver = new ChromeDriver();
+				driver = new ChromeDriver();
 				log.info("Lunching Chrome...");
 			}
 				
 			} else if(config.getProperty("browser").equals("firefox")) {
 				
-				FirefoxDriver driver = new FirefoxDriver();
+				driver = new FirefoxDriver();
 				log.info("Lunching Firefox...");
 				
 			}
@@ -71,20 +74,24 @@ public class BaseTest {
 			else if(config.getProperty("browser").equals("Edge")) {
 				
 				
-				EdgeDriver driver = new EdgeDriver();
+				driver = new EdgeDriver();
 				log.info("Lunching Edge...");
 			}
 		
 		driver.get(config.getProperty("url"));
+		log.info("Navigate to: " + config.getProperty("url"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(config.getProperty("implicit.wait"))));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(config.getProperty(""))));
 
-		or.getProperty("email");
-		or.getProperty("password");
-		or.getProperty("loginbtn");
-		or.getProperty("setpasswordbtn");
- 
-		config.getProperty("browser");
-		config.getProperty("url");
 
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		
+		driver.quit();
+		log.info("Driver is closed!!");
 	}
 
 }

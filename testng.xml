@@ -2,12 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="utilities.ExtentListeners"></listener>
-
+		<listener class-name="extentListeners.ExtentListeners"></listener>
 	</listeners>
-	<test thread-count="5" name="Test">
+	
+	<test thread-count="5" name="Login to the GOR page">
 		<classes>
 			<class name="testCases.LoginTest" />
+			
 		</classes>
 	</test> <!--
 	Test -->
