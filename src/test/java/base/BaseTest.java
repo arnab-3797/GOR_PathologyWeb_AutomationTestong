@@ -1,85 +1,44 @@
 package base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 
+import utilities.ExcelReader;
+
 public class BaseTest {
 
-	public static WebDriver driver;
-	private static Properties config = new Properties();
-	private static Properties or = new Properties();
-	private static FileInputStream fileinput;
-	private static Logger log = Logger.getLogger(BaseTest.class.getName());
-	public static WebDriverWait wait;
-	public static WebElement dropDown;
+	public WebDriver driver;
+	public Properties config = new Properties();
+	public Properties or = new Properties();
+	public FileInputStream fileinput;
+	public Logger log = Logger.getLogger(BaseTest.class.getName());
+	public ExcelReader excel = new ExcelReader(".\\src\\test\\resources\\excel");
+	public WebDriverWait wait;
+	public WebElement dropDown;
+	
 
-	public static void click(String key) {
-
-		if (key.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(or.getProperty(key))).click();
-		} else if (key.endsWith("_ID")) {
-			driver.findElement(By.id(or.getProperty(key))).click();
-		} else if (key.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(or.getProperty(key))).click();
-		}
-		log.info("Cliclinf on element: " + key);
-	}
-
-	public static void select(String key, String value) {
-
-		if (key.endsWith("_XPATH")) {
-			dropDown = driver.findElement(By.xpath(or.getProperty(key)));
-		} else if (key.endsWith("_ID")) {
-			dropDown = driver.findElement(By.id(or.getProperty(key)));
-		} else if (key.endsWith("_CSS")) {
-			dropDown = driver.findElement(By.cssSelector(or.getProperty(key)));
-		}
-
-		Select select = new Select(dropDown);
-		select.selectByVisibleText(value);
-		log.info("Selecting the value from drop down " + key);
-	}
-
-	public static void type(String key, String value) {
-
-		if (key.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(or.getProperty(key))).sendKeys(value);
-		} else if (key.endsWith("_ID")) {
-			driver.findElement(By.id(or.getProperty(key))).sendKeys(value);
-		} else if (key.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(or.getProperty(key))).sendKeys(value);
-		}
-		log.info("Cliclinf on element: " + key + " Selected value is " + value);
-	}
-
-	public static boolean isElementPresent(String key) {
-
-		if (key.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(or.getProperty(key))).isSelected();
-		} else if (key.endsWith("_ID")) {
-			driver.findElement(By.id(or.getProperty(key))).isSelected();
-		} else if (key.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(or.getProperty(key))).isSelected();
-		}
-		log.info("Cliclinf on element: " + key);
-		return false;
-	}
+	
 
 	public void setup(String browserName) {
+		
+		if(driver==null) {
 
 
 			try {
@@ -133,15 +92,37 @@ public class BaseTest {
 					.implicitlyWait(Duration.ofSeconds(Integer.parseInt(config.getProperty("implicit.wait"))));
 			wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(config.getProperty(""))));
 
-		
+		}
 
+	}
+	
+	
+	public void captureScreenShots() {
+
+		Date date = new Date();
+		String screenShotsName = date.toString().replace(":", "_").replace(" ", "_");
+		File srcFile = ((TakesScreenshot) BasePage.driver).getScreenshotAs(OutputType.FILE);
+		File targerFile = new File(
+				System.getProperty("user.dir") + "//target//screenShots//" + screenShotsName + ".jpg");
+		srcFile.renameTo(targerFile);
+	}
+	
+	public static void captureElementScreenShot(WebElement element) {
+		
+		Date date = new Date();
+		String screenShotsName = date.toString().replace(":", "_").replace(" ", "_");
+		File srcFile = ((TakesScreenshot) BasePage.driver).getScreenshotAs(OutputType.FILE);
+		File targerFile = new File(
+				System.getProperty("user.dir") + "//screenShots//" + screenShotsName + ".jpg");
+		srcFile.renameTo(targerFile);
+		
 	}
 
 	@AfterMethod
-	public static void tearDown() {
+	public void tearDown() {
 
 		driver.quit();
-		log.info("Driver is closed!!");
+		log.info("Driver is closed!!!");
 	}
 
 }
