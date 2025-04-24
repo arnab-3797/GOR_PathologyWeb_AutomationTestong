@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
@@ -26,12 +25,11 @@ public class BaseTest {
 
 	public WebDriver driver;
 	public Properties config = new Properties();
-	public Properties or = new Properties();
 	public FileInputStream fileinput;
 	public Logger log = Logger.getLogger(BaseTest.class.getName());
 	public ExcelReader excel = new ExcelReader(".\\src\\test\\resources\\excel");
 	public WebDriverWait wait;
-	public WebElement dropDown;
+	static WebElement dropDown;
 	
 
 	
@@ -46,12 +44,12 @@ public class BaseTest {
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
-			try {
-				fileinput = new FileInputStream(".\\src\\test\\resources\\properties\\locator.properties");
-			} catch (FileNotFoundException e) {
-
-				e.printStackTrace();
-			}
+//			try {
+//				fileinput = new FileInputStream(".\\src\\test\\resources\\properties\\locator.properties");
+//			} catch (FileNotFoundException e) {
+//
+//				e.printStackTrace();
+//			}
 			try {
 				config.load(fileinput);
 				log.info("Config property file loaded");
@@ -59,13 +57,13 @@ public class BaseTest {
 
 				e.printStackTrace();
 			}
-			try {
-				or.load(fileinput);
-				log.info("Locator property file loaded");
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
+//			try {
+//				or.load(fileinput);
+//				log.info("Locator property file loaded");
+//			} catch (IOException e) {
+//
+//				e.printStackTrace();
+//			}
 
 			if (browserName.equals("chrome")) {
 
@@ -90,7 +88,7 @@ public class BaseTest {
 			driver.manage().window().maximize();
 			driver.manage().timeouts()
 					.implicitlyWait(Duration.ofSeconds(Integer.parseInt(config.getProperty("implicit.wait"))));
-			wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(config.getProperty(""))));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(config.getProperty("explicit.wait"))));
 
 		}
 

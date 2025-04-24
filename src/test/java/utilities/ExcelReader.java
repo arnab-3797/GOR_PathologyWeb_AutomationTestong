@@ -2,10 +2,23 @@ package utilities;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import org.apache.poi.common.usermodel.HyperlinkType;
-import org.apache.poi.hssf.usermodel.HSSFDataUtil;
+import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFHyperlink;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class ExcelReader {
@@ -56,7 +69,7 @@ public class ExcelReader {
 				return "";
 		
 		int index = workbook.getSheetIndex(sheetName);
-		int col_Num=-1;
+		int col_Num=-1; 
 		if(index==-1)
 			return "";
 		
@@ -84,12 +97,12 @@ public class ExcelReader {
 		else if(cell.getCellType()==CellType.NUMERIC || cell.getCellType()==CellType.FORMULA ){
 			  
 			  String cellText  = String.valueOf(cell.getNumericCellValue());
-			  if (HSSFDateUtil.isCellDateFormatted(cell)) {
+			  if (DateUtil.isCellDateFormatted(cell)) {
 		           
 				  double d = cell.getNumericCellValue();
 
 				  Calendar cal =Calendar.getInstance();
-				  cal.setTime(HSSFDateUtil.getJavaDate(d));
+				  cal.setTime(DateUtil.getJavaDate(d));
 		            cellText =
 		             (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
 		           cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" +
@@ -143,12 +156,12 @@ public class ExcelReader {
 	  else if(cell.getCellType()==CellType.NUMERIC || cell.getCellType()==CellType.FORMULA ){
 		  
 		  String cellText  = String.valueOf(cell.getNumericCellValue());
-		  if (HSSFDateUtil.isCellDateFormatted(cell)) {
+		  if (DateUtil.isCellDateFormatted(cell)) {
 	           // format in form of M/D/YY
 			  double d = cell.getNumericCellValue();
 
 			  Calendar cal =Calendar.getInstance();
-			  cal.setTime(HSSFDateUtil.getJavaDate(d));
+			  cal.setTime(DateUtil.getJavaDate(d));
 	            cellText =
 	             (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
 	           cellText = cal.get(Calendar.MONTH)+1 + "/" +
@@ -273,7 +286,7 @@ public class ExcelReader {
 
 	    //cell style for hyperlinks
 	    
-	    CellStyle hlink_style = workbook.createCellStyle();
+	    XSSFCellStyle hlink_style = workbook.createCellStyle();
 	    XSSFFont hlink_font = workbook.createFont();
 	    hlink_font.setUnderline(XSSFFont.U_SINGLE);
 	    hlink_font.setColor(IndexedColors.BLUE.getIndex());
