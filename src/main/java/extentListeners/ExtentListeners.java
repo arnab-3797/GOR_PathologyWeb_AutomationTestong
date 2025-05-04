@@ -17,7 +17,7 @@ public class ExtentListeners implements ITestListener, ISuiteListener{
 	
 	static Date date = new Date();
 	static String fileName = "Extent"+ date.toString().replace(":","_").replace(" ", "_");
-	private static ExtentReports extentreport = ExtentReportManager.createInstance(".target\\Reports\\HTML\\" + fileName);
+	private static ExtentReports extentreport = ExtentReportManager.createInstance(".\\target\\Reports\\HTML\\" + fileName);
 	
 	public static ExtentTest testreport;
 	

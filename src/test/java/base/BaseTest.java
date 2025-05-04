@@ -44,12 +44,6 @@ public class BaseTest {
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
-//			try {
-//				fileinput = new FileInputStream(".\\src\\test\\resources\\properties\\locator.properties");
-//			} catch (FileNotFoundException e) {
-//
-//				e.printStackTrace();
-//			}
 			try {
 				config.load(fileinput);
 				log.info("Config property file loaded");
@@ -57,13 +51,6 @@ public class BaseTest {
 
 				e.printStackTrace();
 			}
-//			try {
-//				or.load(fileinput);
-//				log.info("Locator property file loaded");
-//			} catch (IOException e) {
-//
-//				e.printStackTrace();
-//			}
 
 			if (browserName.equals("chrome")) {
 
