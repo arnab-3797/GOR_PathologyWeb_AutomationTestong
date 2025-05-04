@@ -49,8 +49,10 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
                     <span>D:\project\GOR_PathologyWeb_AutomationTestong\testng.xml</span>
+
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -141,6 +143,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+
             <span class="header-content">D:\project\GOR_PathologyWeb_AutomationTestong\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
@@ -153,7 +156,11 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Login to the GOR page&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.LoginTest&quot;/&gt;
+      &lt;class name=&quot;testCases.LoginTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;doLogin&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testCases.LoginTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login to the GOR page --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -237,7 +244,8 @@ return data;
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">8564 ms</span>
+
+                <span class="method-start">24365 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

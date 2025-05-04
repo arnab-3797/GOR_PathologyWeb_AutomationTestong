@@ -16,8 +16,8 @@ public class TestUtils {
 		
 		File srcFile = ((TakesScreenshot)BasePage.driver).getScreenshotAs(OutputType.FILE); 	
 		Date date= new Date();
-		String screenShotsName = date.toString().replace(":", "_").replace(" ", "_");
-		File targerFile = new File(System.getProperty("user.dir")+"//target//screenShots//"+screenShotsName+".jpg");
+		String screenShotsName = date.toString().replace(":", "_").replace(" ", "_")+ ".jpg";
+		File targerFile = new File(System.getProperty("user.dir")+"//target//screenShots//"+screenShotsName);
 		srcFile.renameTo(targerFile);
 	}
 

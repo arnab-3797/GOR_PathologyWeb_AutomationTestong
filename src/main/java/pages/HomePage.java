@@ -14,6 +14,7 @@ public class HomePage extends BasePage{
 	}
 	
 	
+
 	@FindBy(xpath = "//div[@class='title'][text()='Dashboard']")
 	public static WebElement dashBoardTitle;
 	
@@ -24,5 +25,6 @@ public class HomePage extends BasePage{
 		return boardtitle;
 	}
 	
+
 
 }
