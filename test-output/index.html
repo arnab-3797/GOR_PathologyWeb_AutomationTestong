@@ -49,10 +49,8 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\project\GOR_PathologyWeb_AutomationTestong\testng.xml</span>
-
+                    <span>D:\project\GOR_PathologyWeb_AutomationTestong\src\test\resources\runner\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -131,10 +129,10 @@
                   <a name="doLogin">
                   </a> <!-- doLogin -->
                   <span class="method-name">doLogin</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Dashboardfg] but found [div]
-	at testCases.LoginTest.doLogin(LoginTest.java:24)
+                  <div class="stack-trace">java.lang.AssertionError: Dashboard title match expected [Dashboardfg] but found [div]
+	at testCases.LoginTest.doLogin(LoginTest.java:25)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 31 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -143,26 +141,18 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-
-            <span class="header-content">D:\project\GOR_PathologyWeb_AutomationTestong\testng.xml</span>
+            <span class="header-content">D:\project\GOR_PathologyWeb_AutomationTestong\src\test\resources\runner\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;extentListeners.ExtentListeners&quot;/&gt;
-  &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Login to the GOR page&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.LoginTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;doLogin&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCases.LoginTest --&gt;
+      &lt;class name=&quot;testCases.LoginTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Login to the GOR page --&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -174,7 +164,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Login to the GOR page (1 class)</span>
+                <span class="test-name">Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -204,7 +194,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'doLogin')
 data.setCell(0, 2, 'testCases.LoginTest')
-data.setCell(0, 3, 8532);
+data.setCell(0, 3, 8500);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -244,8 +234,7 @@ return data;
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-
-                <span class="method-start">24365 ms</span>
+                <span class="method-start">8517 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

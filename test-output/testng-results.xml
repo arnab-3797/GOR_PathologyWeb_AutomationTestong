@@ -2,26 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-
-  <suite started-at="2025-04-26T02:07:50 IST" name="Suite" finished-at="2025-04-26T02:08:00 IST" duration-ms="9830">
+  <suite started-at="2025-05-05T12:48:06 IST" name="Suite" finished-at="2025-05-05T12:48:15 IST" duration-ms="8984">
     <groups>
     </groups>
-    <test started-at="2025-04-26T02:07:50 IST" name="Login to the GOR page" finished-at="2025-04-26T02:08:00 IST" duration-ms="9830">
+    <test started-at="2025-05-05T12:48:06 IST" name="Test" finished-at="2025-05-05T12:48:15 IST" duration-ms="8984">
       <class name="testCases.LoginTest">
-        <test-method signature="doLogin()[pri:0, instance:testCases.LoginTest@5f9edf14]" started-at="2025-04-26T02:07:51 IST" name="doLogin" finished-at="2025-04-26T02:07:59 IST" duration-ms="8532" status="FAIL">
+        <test-method signature="doLogin()[pri:0, instance:testCases.LoginTest@10683d9d]" started-at="2025-05-05T12:48:06 IST" name="doLogin" finished-at="2025-05-05T12:48:15 IST" duration-ms="8500" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [Dashboardfg] but found [div]]]>
+              <![CDATA[Dashboard title match expected [Dashboardfg] but found [div]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Dashboardfg] but found [div]
+              <![CDATA[java.lang.AssertionError: Dashboard title match expected [Dashboardfg] but found [div]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at testCases.LoginTest.doLogin(LoginTest.java:24)
+at testCases.LoginTest.doLogin(LoginTest.java:25)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -54,11 +52,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@5f9edf14]" started-at="2025-04-26T02:07:59 IST" name="tearDown" finished-at="2025-04-26T02:08:00 IST" duration-ms="1178" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@10683d9d]" started-at="2025-05-05T12:48:15 IST" name="tearDown" finished-at="2025-05-05T12:48:15 IST" duration-ms="368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.LoginTest -->
-    </test> <!-- Login to the GOR page -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
