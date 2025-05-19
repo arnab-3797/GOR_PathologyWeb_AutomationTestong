@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +23,10 @@ public class GenaralDetailsPage extends BasePage {
 	public static WebElement weightbox;
 	
 	@FindBy(xpath="//div[contains(@id,'mui-component-select-gender')]")
-	public static WebElement genderbox;
+	public static WebElement genderdropdownbox;
+	
+	@FindBy(xpath="//*[contains(@class,'MuiList-root MuiMenu-list MuiList-padding')]//li")
+	public static List<WebElement> genderdropdownoption;
 	
 	@FindBy(xpath="//input[@name='age']")
 	public static WebElement agebox;
@@ -39,12 +44,39 @@ public class GenaralDetailsPage extends BasePage {
 	public static WebElement addtestbtn;
 	
 	
-	public void secondaryDetailsFields(String height, String weight, String age) {
+	public void secondaryDetailsFields(String height, String weight, String age, String gender) {
 		
 		heightbox.sendKeys(height);
+		weightbox.sendKeys(weight);
+		genderdropdownbox.click();
+		for(WebElement option : genderdropdownoption) {
+			if(option.getText().trim().equalsIgnoreCase(gender)) {
+				option.click();
+			}
+		}
+		
+		agebox.sendKeys(age);
 	}
 	
+	public void bloodPressure(String systolicbloodpressure, String diastolocbloodpressure) {
+		
+		agebox.sendKeys(systolicbloodpressure);
+		diastolicbox.sendKeys(diastolocbloodpressure);
+		
+	}
 	
+	public AddPatient backBtn() {
+		
+		backbtn.click();
+		
+		return new AddPatient(driver);
+	}
+	
+	public AddTestPage addTestToPatient() {
+		
+		addtestbtn.click();
+		return new AddTestPage(driver);
+	}
 	
 	
 	
