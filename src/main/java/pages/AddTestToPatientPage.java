@@ -33,7 +33,7 @@ public class AddTestToPatientPage extends BasePage {
 	@FindBy(xpath = "//input[@id='patient-tests-labs']")
 	public static WebElement recomendedlabnamedropdown;
 	@FindBy(xpath = "//*[@id='patient-tests-labs-popup']//li")
-	public static List<WebElement> patienttestlaboptions;
+	public static List<WebElement> testlaboptions;
 
 	@FindBy(xpath = "//div[@id='mui-component-select-doctor_commission']")
 	public static WebElement doctorscommitiondropdown;
@@ -41,7 +41,7 @@ public class AddTestToPatientPage extends BasePage {
 	public static List<WebElement> doctorsdiscountoption;
 
 	@FindBy(xpath = "//span[text()='add_box']")
-	public static WebElement addequipmentdropdown;
+	public static WebElement addequipmentbtn;
 	@FindBy(xpath = "//ul[contains(@class,'MuiList-root MuiMenu-list MuiList-padding')]/li")
 	public static List<WebElement> equipmentoption;
 
@@ -69,7 +69,7 @@ public class AddTestToPatientPage extends BasePage {
 	@FindBy(xpath = "//span[text()='Add Patient']/ancestor:: button")
 	public static WebElement addpatientbtn;
 
-	public static void testCostCalculator(String name, String patientDiscount, String Labname, String DoctorsName,
+	public static void testCostCalculator(String name, String patientDiscount, String labname, String DoctorsName,
 			String doctorsDiscount) {
 
 		addtestforpatientdropdown.click();
@@ -87,6 +87,45 @@ public class AddTestToPatientPage extends BasePage {
 				patientdiscountoption.click();
 			}
 		}
+		
+		recomendedlabnamedropdown.click();
+		for (WebElement labnameoption : testlaboptions) {
+
+			if (labnameoption.getText().trim().equalsIgnoreCase(labname)) {
+				labnameoption.click();
+			}
+		}
+		
+		recomendeddoctornamedropdown.click();
+		for (WebElement doctornameoption : doctorsnamedropdownoption) {
+
+			if (doctornameoption.getText().trim().equalsIgnoreCase(DoctorsName)) {
+				doctornameoption.click();
+			}
+		}
+		
+		doctorscommitiondropdown.click();
+		for (WebElement doctorcommitionoption : doctorsdiscountoption) {
+
+			if (doctorcommitionoption.getText().trim().equalsIgnoreCase(doctorsDiscount)) {
+				doctorcommitionoption.click();
+			}
+		}
+		
+		
+	}
+	
+	public void addEquipment(String name, String equipmentnumner) {
+		
+		addequipmentbtn.click();
+		equipmentname.click();
+		for (WebElement euuipmentoption : equipmentoption) {
+
+			if (euuipmentoption.getText().trim().equalsIgnoreCase(equipmentnumner)) {
+				euuipmentoption.click();
+			}
+		}
+		
 	}
 
 }
