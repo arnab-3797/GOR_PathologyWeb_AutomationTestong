@@ -121,11 +121,41 @@ public class AddTestToPatientPage extends BasePage {
 		equipmentname.click();
 		for (WebElement euuipmentoption : equipmentoption) {
 
-			if (euuipmentoption.getText().trim().equalsIgnoreCase(equipmentnumner)) {
+			if (euuipmentoption.getText().trim().equalsIgnoreCase(name)) {
 				euuipmentoption.click();
 			}
 		}
 		
+		addequipmentrequirednumberbtn.clear();
+		addequipmentrequirednumberbtn.sendKeys(equipmentnumner);
+		
+		
+	}
+	
+	public void saveEquipment() {
+		
+		saveequipmentbtn.click();
+	}
+	
+	public void cancelEquipment() {
+		cancelquipmentbtn.click();
+	}
+	public void editEquipment() {
+		editeuipmentbtn.click();
+	}
+	public void deleteEquipment() {
+		deleteeuipmentbtn.click();
+	}
+	
+	public GenaralDetailsPage backBtnAction() {
+		backbtn.click();
+		return new GenaralDetailsPage(driver);
+	}
+	
+	public TestPage addPatientAction() {
+		
+		addpatientbtn.click();
+		return new TestPage(driver);
 	}
 
 }
