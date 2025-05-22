@@ -22,7 +22,7 @@ public class TestPage extends BasePage {
 	
 	public ManageTestsPage manageTest() {
 		
-		manageTest.clear();
+		manageTest.click();
 		return new ManageTestsPage(driver);
 	}
 	
