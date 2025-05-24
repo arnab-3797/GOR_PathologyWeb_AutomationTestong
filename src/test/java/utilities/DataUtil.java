@@ -13,13 +13,13 @@ public class DataUtil extends BaseTest {
 		
 		String sheetName= m.getName();
 		int rowCount = excel.getRowCount(sheetName);
-		int colCount = excel.getRowCount(sheetName);
+		int colCount = excel.getColumnCount(sheetName);
 		
 		
-		Object[][] data = new Object[rowCount-1][colCount-1];
+		Object[][] data = new Object[rowCount-1][colCount];
 		
 		for(int rows=2;rows<=rowCount;rows++) {
-			for(int cols=0; cols<=colCount;cols++) {
+			for(int cols=0; cols<colCount;cols++) {
 				
 				data[rows-2][cols]=excel.getCellData(sheetName, cols, rows);
 			}
