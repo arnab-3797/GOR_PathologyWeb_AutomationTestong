@@ -27,7 +27,7 @@ public class BaseTest {
 	public Properties config = new Properties();
 	public FileInputStream fileinput;
 	public Logger log = Logger.getLogger(BaseTest.class.getName());
-	public ExcelReader excel = new ExcelReader(".\\src\\test\\resources\\excel");
+	public ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\LoginData.xlsx");
 	public WebDriverWait wait;
 	static WebElement dropDown;
 	

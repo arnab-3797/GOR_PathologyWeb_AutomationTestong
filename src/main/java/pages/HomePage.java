@@ -20,11 +20,11 @@ public class HomePage extends BasePage{
 	public static WebElement dashBoardTitle;
 	
 	
-	public String findDashBoardPageTitle() {
+/*	public String findDashBoardPageTitle() {
 		
 		String boardtitle = dashBoardTitle.getTagName();
 		return boardtitle;
-	}
+	} */
 	
 	@FindBy(xpath= "//div[contains(@class,'MuiInputBase-root MuiOutlinedInput-root')]//input[@id='patient-test']")
 	public static WebElement addTest;
