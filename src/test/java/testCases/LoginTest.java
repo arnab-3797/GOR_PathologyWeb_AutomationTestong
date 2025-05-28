@@ -24,6 +24,7 @@ public class LoginTest extends BaseTest {
 	public void doLogin(String username, String password, String browserName) {
 	
 		setup(browserName);
+		log.info("browser is opening");
 		LoginPage loginPage = new LoginPage(driver);
 		String actualTitle = loginPage.doLogin(username, password).getPageTitle();
 		System.out.println(actualTitle);
