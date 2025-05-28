@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import java.util.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -26,7 +27,7 @@ public class HomePage extends BasePage{
 		return boardtitle;
 	} */
 	
-	@FindBy(xpath= "//div[contains(@class,'MuiInputBase-root MuiOutlinedInput-root')]//input[@id='patient-test']")
+	@FindBy(xpath= "//input[@id='patient-test']//parent ::div")
 	public static WebElement addTest;
 	
 	@FindBy(xpath="//div[contains(@class,'MuiSelect-root MuiSelect-select')]")
@@ -35,12 +36,17 @@ public class HomePage extends BasePage{
 	@FindBy(xpath= "//li[contains(@id,'patient-test-option')]")
 	public static WebElement testName;
 	
+	@FindBy(xpath="//div[@id='patient-test-popup']//ul//li")
+	public static List<WebElement> testdropdownpotions;
 	
 	
 	public void testCostCalculator(String testName) {
 		
-		addTest.sendKeys(testName);
-		action.moveToElement(addTest).perform();
+		for(WebElement dropdownoption : testdropdownpotions) {
+			if(dropdownoption.getText().trim().equalsIgnoreCase(testName)) {
+				dropdownoption.click();
+			}
+		}
 		
 		
 	}

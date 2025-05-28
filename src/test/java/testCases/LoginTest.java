@@ -27,9 +27,11 @@ public class LoginTest extends BaseTest {
 		log.info("browser is opening");
 		LoginPage loginPage = new LoginPage(driver);
 		String actualTitle = loginPage.doLogin(username, password).getPageTitle();
+		log.info("Logde in to GOR.." + actualTitle);
 		System.out.println(actualTitle);
 		String expectedTitle ="Dashboard";
 		softAssert.assertEquals(actualTitle, expectedTitle,"Dashboard title match");
+		
 	}
 	
 
