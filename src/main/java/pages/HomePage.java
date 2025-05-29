@@ -1,7 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import java.util.*;
+import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -42,13 +42,13 @@ public class HomePage extends BasePage{
 	
 	public void testCostCalculator(String testName) {
 		
-		for(WebElement dropdownoption : testdropdownpotions) {
-			if(dropdownoption.getText().trim().equalsIgnoreCase(testName)) {
-				dropdownoption.click();
-			}
-		}
+//		for(WebElement dropdownoption : testdropdownpotions) {
+//			if(dropdownoption.getText().trim().equalsIgnoreCase(testName)) {
+//				dropdownoption.click();
+//			}
+//		}
 		
-		
+		selectlementFromDropdown(testdropdownpotions, testName);
 	}
 	
 
