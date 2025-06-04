@@ -19,7 +19,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ExcelReader;
 
 public class BaseTest {

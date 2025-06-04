@@ -23,7 +23,7 @@ public class BasePage {
 	
 	public String getPageTitle() {
 		
-		return pagetitle.getText();
+		return getValueFromText(pagetitle);
 	}
 	
 	public void click(WebElement element) {
@@ -42,7 +42,7 @@ public class BasePage {
 		}
 	}
 	
-	public String getValue(WebElement element) {
+	public String getValueFromText(WebElement element) {
 		String text = element.getText();
 		return text;
 	}

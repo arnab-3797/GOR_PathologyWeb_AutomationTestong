@@ -3,9 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import java.util.List;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
 import base.BasePage;
 
 public class HomePage extends BasePage{
@@ -15,7 +13,6 @@ public class HomePage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	Actions action = new Actions(driver);
 
 	@FindBy(xpath = "//div[@class='title'][text()='Dashboard']")
 	public static WebElement dashBoardTitle;
@@ -38,19 +35,34 @@ public class HomePage extends BasePage{
 	
 	@FindBy(xpath="//div[@id='patient-test-popup']//ul//li")
 	public static List<WebElement> testdropdownpotions;
+	@FindBy(xpath="//ul[@class='MuiList-root MuiMenu-list MuiList-padding']/li")
+	public static List<WebElement> discountdropdownoptions;
+	
+	@FindBy(css = "div[class='MuiBox-root jss75']")
+	public static WebElement subtotalvalue;
+	
+	@FindBy(css = "div[class='MuiBox-root jss78']")
+	public static WebElement totalvalue;
 	
 	
-	public void testCostCalculator(String testName) {
+	
+	public void testCostCalculator(String testName, String discountpercentage) {
 		
-//		for(WebElement dropdownoption : testdropdownpotions) {
-//			if(dropdownoption.getText().trim().equalsIgnoreCase(testName)) {
-//				dropdownoption.click();
-//			}
-//		}
 		
 		selectlementFromDropdown(testdropdownpotions, testName);
+		selectlementFromDropdown(discountdropdownoptions,discountpercentage);
+	}
+	public String getSubTotalValue() {
+		
+		return getValueFromText(subtotalvalue);
+		
 	}
 	
+	public String getTotalValue() {
+		
+		return getValueFromText(totalvalue);
+		
+	}
 
 
 }

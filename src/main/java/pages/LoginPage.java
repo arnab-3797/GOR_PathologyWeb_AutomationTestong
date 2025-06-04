@@ -22,6 +22,7 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//span[text()='Login']")
 	public WebElement loginBtn;
 
+	
 	public HomePage doLogin(String userName, String password) {
 		writeText(email,userName);
 		writeText(psw,password);

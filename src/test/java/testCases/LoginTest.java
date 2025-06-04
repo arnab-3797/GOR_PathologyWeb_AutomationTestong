@@ -2,10 +2,6 @@ package testCases;
 
 
 
-
-import static org.testng.Assert.assertEquals;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -21,7 +17,7 @@ public class LoginTest extends BaseTest {
 	SoftAssert softAssert = new SoftAssert();
 
 	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
-	public void doLogin(String username, String password, String browserName) {
+	public void doLogin(String username, String password, String browserName, String expectedTitle) {
 	
 		setup(browserName);
 		log.info("browser is opening");
@@ -29,7 +25,7 @@ public class LoginTest extends BaseTest {
 		String actualTitle = loginPage.doLogin(username, password).getPageTitle();
 		log.info("Logde in to GOR.." + actualTitle);
 		System.out.println(actualTitle);
-		String expectedTitle ="Dashboard";
+		//String expectedTitle ="Dashboard";
 		softAssert.assertEquals(actualTitle, expectedTitle,"Dashboard title match");
 		
 	}
