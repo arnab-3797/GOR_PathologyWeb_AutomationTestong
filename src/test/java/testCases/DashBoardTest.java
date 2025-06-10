@@ -1,5 +1,6 @@
 package testCases;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -28,6 +29,11 @@ public class DashBoardTest extends BaseTest {
 	public void addTestFromDropDown(String testName, String discount ) {
 		
 		home.testCostCalculator(testName, discount);
+		log.info("test and Discount selected");
+		
+		softAssert.assertEquals(false, testName);
+		
+		
 		
 	}
 	
