@@ -64,5 +64,11 @@ public class HomePage extends BasePage{
 		
 	}
 
+	@FindBy(xpath="//span[@class='MuiChip-label']")
+	public static List<WebElement> selectedTest;
+	public int getPriceForTest() {
+		int sumofprice = getSumOfNumberFromString(selectedTest);
+		return sumofprice;
+		}
 
 }
