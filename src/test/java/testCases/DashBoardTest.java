@@ -7,12 +7,14 @@ import org.testng.asserts.SoftAssert;
 import base.BaseTest;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.DataUtil;
 
 public class DashBoardTest extends BaseTest {
+	private static final boolean flase = false;
 	SoftAssert softAssert = new SoftAssert();
 	HomePage home = new HomePage(driver);
 	
-	@Test
+	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp",enabled=flase)
 	public void logedinToDashboard(String username, String password, String browserName, String expectedTitle ) {
 		
 		setup(browserName);
@@ -22,19 +24,27 @@ public class DashBoardTest extends BaseTest {
 		log.info("user loged in to dashboard");
 		String actualTitle = home.getPageTitle();
 		softAssert.assertEquals(actualTitle, expectedTitle,"Dashboard does not title match");
+		softAssert.assertAll();
 	}
 	
 	
-	@Test
-	public void addTestFromDropDown(String testName, String discount ) {
+	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp",enabled =true)
+	public void addTestFromDropDown(String username,String password ,String browserName, String testName, String discount ) {
 		
+		setup(browserName);
+		log.info(browserName+"Browser is opening....");
+		LoginPage login =new LoginPage(driver);
+		login.doLogin(username, password);
 		home.testCostCalculator(testName, discount);
 		log.info("test and Discount selected");
+		int actualPrice = home.getToataPriceFromDropdownTest();
 		
-		softAssert.assertEquals(false, testName);
+		int expectedPrice = Integer.parseInt(home.getSubTotalValue());
+		softAssert.assertEquals(actualPrice, expectedPrice,"Sum Of Price not matching with Total vlue");
 		
 		
 		
+		softAssert.assertAll();
 	}
 	
 	

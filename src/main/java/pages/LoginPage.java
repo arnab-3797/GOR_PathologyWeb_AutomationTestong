@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
 	public HomePage doLogin(String userName, String password) {
 		writeText(email,userName);
 		writeText(psw,password);
-		click(loginBtn);
+		clickToElemennt(loginBtn);
 		return new HomePage(driver);
 	}
 
