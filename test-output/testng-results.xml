@@ -2,12 +2,12 @@
 <testng-results ignored="1" total="5" passed="0" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-11T21:05:37 IST" name="Default suite" finished-at="2025-06-11T21:07:16 IST" duration-ms="99061">
+  <suite started-at="2025-06-16T12:45:07 IST" name="Default suite" finished-at="2025-06-16T12:46:04 IST" duration-ms="56665">
     <groups>
     </groups>
-    <test started-at="2025-06-11T21:05:37 IST" name="Default test" finished-at="2025-06-11T21:07:16 IST" duration-ms="99061">
+    <test started-at="2025-06-16T12:45:07 IST" name="Default test" finished-at="2025-06-16T12:46:04 IST" duration-ms="56665">
       <class name="testCases.DashBoardTest">
-        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:05:37 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-11T21:05:49 IST" duration-ms="11891" status="FAIL">
+        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:08 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-16T12:45:20 IST" duration-ms="12446" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -37,26 +37,26 @@
           </params>
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (795, 798)
-  (Session info: chrome=137.0.7151.103)
+              <![CDATA[element click intercepted: Element is not clickable at point (795, 796)
+  (Session info: chrome=137.0.7151.104)
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8eca0d98224bdc220a65d86119b6c6c, clickElement {id=f.44CB88657B1B55E16DCE76916860D9DF.d.F55A10337E04A618C19C742CC1C1BE28.e.276}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.103, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53946}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53946/devtoo..., se:cdpVersion: 137.0.7151.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (d8eca0d98224bdc220a65d86119b6c6c)] -> xpath: //input[@id='patient-test']//parent :: div]
-Session ID: d8eca0d98224bdc220a65d86119b6c6c]]>
+Command: [560b4c556253bc707a3e23e755b0d1dd, clickElement {id=f.1E10BE0F570BB31BDD1CA46FCD32F657.d.49406ED72AB32AB0AA80AF9292119CD8.e.279}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60067}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60067/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (560b4c556253bc707a3e23e755b0d1dd)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: 560b4c556253bc707a3e23e755b0d1dd]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (795, 798)
-  (Session info: chrome=137.0.7151.103)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (795, 796)
+  (Session info: chrome=137.0.7151.104)
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8eca0d98224bdc220a65d86119b6c6c, clickElement {id=f.44CB88657B1B55E16DCE76916860D9DF.d.F55A10337E04A618C19C742CC1C1BE28.e.276}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.103, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53946}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53946/devtoo..., se:cdpVersion: 137.0.7151.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (d8eca0d98224bdc220a65d86119b6c6c)] -> xpath: //input[@id='patient-test']//parent :: div]
-Session ID: d8eca0d98224bdc220a65d86119b6c6c
+Command: [560b4c556253bc707a3e23e755b0d1dd, clickElement {id=f.1E10BE0F570BB31BDD1CA46FCD32F657.d.49406ED72AB32AB0AA80AF9292119CD8.e.279}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60067}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60067/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (560b4c556253bc707a3e23e755b0d1dd)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: 560b4c556253bc707a3e23e755b0d1dd
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -73,9 +73,9 @@ at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethod
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-at base.BasePage.clickToElemennt(BasePage.java:35)
-at pages.HomePage.testCostCalculator(HomePage.java:42)
-at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:38)
+at base.BasePage.clickToElemennt(BasePage.java:39)
+at pages.HomePage.testCostCalculator(HomePage.java:49)
+at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -108,11 +108,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addTestFromDropDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:05:49 IST" name="tearDown" finished-at="2025-06-11T21:05:50 IST" duration-ms="481" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:20 IST" name="tearDown" finished-at="2025-06-16T12:45:21 IST" duration-ms="439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:05:50 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-11T21:06:04 IST" duration-ms="14370" status="FAIL">
+        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:21 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-16T12:45:33 IST" duration-ms="12298" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -147,10 +147,10 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [7fb3605849b2cc913827e52f8c4aa094, clickElement {id=f.890915AA44EF209F9F0B30AA334CD646.d.74C29BB4D863B18B5EE69F5F0FBBAA77.e.276}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53984}, msedge: {msedgedriverVersion: 137.0.3296.68 (f3affdcf267b..., userDataDir: C:\Users\USER\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53984/devtoo..., se:cdpVersion: 137.0.3296.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (7fb3605849b2cc913827e52f8c4aa094)] -> xpath: //input[@id='patient-test']//parent :: div]
-Session ID: 7fb3605849b2cc913827e52f8c4aa094]]>
+Command: [f273f60f6b1058a27414fbacd9e84a77, clickElement {id=f.A52C7FEBC293AA51E79FF74EA210BC94.d.ED3E451247594205C0D025B2B9578A74.e.279}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:60095}, msedge: {msedgedriverVersion: 137.0.3296.83 (24e00e9cccf2..., userDataDir: C:\Users\USER\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60095/devtoo..., se:cdpVersion: 137.0.3296.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (f273f60f6b1058a27414fbacd9e84a77)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: f273f60f6b1058a27414fbacd9e84a77]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (791, 796)
@@ -158,10 +158,10 @@ Session ID: 7fb3605849b2cc913827e52f8c4aa094]]>
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [7fb3605849b2cc913827e52f8c4aa094, clickElement {id=f.890915AA44EF209F9F0B30AA334CD646.d.74C29BB4D863B18B5EE69F5F0FBBAA77.e.276}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53984}, msedge: {msedgedriverVersion: 137.0.3296.68 (f3affdcf267b..., userDataDir: C:\Users\USER\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53984/devtoo..., se:cdpVersion: 137.0.3296.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (7fb3605849b2cc913827e52f8c4aa094)] -> xpath: //input[@id='patient-test']//parent :: div]
-Session ID: 7fb3605849b2cc913827e52f8c4aa094
+Command: [f273f60f6b1058a27414fbacd9e84a77, clickElement {id=f.A52C7FEBC293AA51E79FF74EA210BC94.d.ED3E451247594205C0D025B2B9578A74.e.279}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:60095}, msedge: {msedgedriverVersion: 137.0.3296.83 (24e00e9cccf2..., userDataDir: C:\Users\USER\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60095/devtoo..., se:cdpVersion: 137.0.3296.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (f273f60f6b1058a27414fbacd9e84a77)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: f273f60f6b1058a27414fbacd9e84a77
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -178,9 +178,9 @@ at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethod
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-at base.BasePage.clickToElemennt(BasePage.java:35)
-at pages.HomePage.testCostCalculator(HomePage.java:42)
-at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:38)
+at base.BasePage.clickToElemennt(BasePage.java:39)
+at pages.HomePage.testCostCalculator(HomePage.java:49)
+at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -213,11 +213,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addTestFromDropDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:06:04 IST" name="tearDown" finished-at="2025-06-11T21:06:06 IST" duration-ms="1531" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:33 IST" name="tearDown" finished-at="2025-06-16T12:45:35 IST" duration-ms="1586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:06:06 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-11T21:06:43 IST" duration-ms="37319" status="FAIL">
+        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:35 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-16T12:45:50 IST" duration-ms="15513" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -245,26 +245,26 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[Unable to locate element: div[class='MuiBox-root jss75']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[Element <div class="MuiInputBase-root MuiOutlinedInput-root MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"> could not be scrolled into view
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [26fded45-bf0f-44a3-b456-b6bf13d5b29b, findElement {value=div[class='MuiBox-root jss75'], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 139.0.1, moz:accessibilityChecks: false, moz:buildID: 20250529122813, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 12476, moz:profile: C:\Users\USER\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 26fded45-bf0f-44a3-b456-b6bf13d5b29b]]>
+Command: [d3af535d-0ea1-4e1b-a36c-28bcca595e63, clickElement {id=744e22c8-6169-4ce8-bb23-3be4af02e705}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 139.0.4, moz:accessibilityChecks: false, moz:buildID: 20250609112858, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8052, moz:profile: C:\Users\USER\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Element: [[FirefoxDriver: firefox on windows (d3af535d-0ea1-4e1b-a36c-28bcca595e63)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: d3af535d-0ea1-4e1b-a36c-28bcca595e63]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: div[class='MuiBox-root jss75']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <div class="MuiInputBase-root MuiOutlinedInput-root MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"> could not be scrolled into view
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [26fded45-bf0f-44a3-b456-b6bf13d5b29b, findElement {value=div[class='MuiBox-root jss75'], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 139.0.1, moz:accessibilityChecks: false, moz:buildID: 20250529122813, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 12476, moz:profile: C:\Users\USER\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 26fded45-bf0f-44a3-b456-b6bf13d5b29b
+Command: [d3af535d-0ea1-4e1b-a36c-28bcca595e63, clickElement {id=744e22c8-6169-4ce8-bb23-3be4af02e705}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 139.0.4, moz:accessibilityChecks: false, moz:buildID: 20250609112858, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8052, moz:profile: C:\Users\USER\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Element: [[FirefoxDriver: firefox on windows (d3af535d-0ea1-4e1b-a36c-28bcca595e63)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: d3af535d-0ea1-4e1b-a36c-28bcca595e63
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -275,16 +275,15 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy13.getText(Unknown Source)
-at base.BasePage.getValueFromText(BasePage.java:56)
-at pages.HomePage.getSubTotalValue(HomePage.java:54)
-at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:42)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+at base.BasePage.clickToElemennt(BasePage.java:39)
+at pages.HomePage.testCostCalculator(HomePage.java:49)
+at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -313,15 +312,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addTestFromDropDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:06:43 IST" name="tearDown" finished-at="2025-06-11T21:06:45 IST" duration-ms="1485" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:50 IST" name="tearDown" finished-at="2025-06-16T12:45:52 IST" duration-ms="2338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:06:45 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-11T21:07:16 IST" duration-ms="31262" status="FAIL">
+        <test-method signature="addTestFromDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:45:52 IST" name="addTestFromDropDown" data-provider="dp" finished-at="2025-06-16T12:46:04 IST" duration-ms="11180" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -349,28 +348,28 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div[class='MuiBox-root jss75']"}
-  (Session info: chrome=137.0.7151.103)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[element click intercepted: Element is not clickable at point (795, 790)
+  (Session info: chrome=137.0.7151.104)
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [957fadf56304f2443a419817a10e4d5c, findElement {value=div[class='MuiBox-root jss75'], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.103, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54118}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54118/devtoo..., se:cdpVersion: 137.0.7151.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 957fadf56304f2443a419817a10e4d5c]]>
+Command: [02281ca6f562570a08f5e293205eab12, clickElement {id=f.0471381964F7C80B1864188A8570E53F.d.A192089DE8A5825499979DD47C8C7789.e.268}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60270}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60270/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02281ca6f562570a08f5e293205eab12)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: 02281ca6f562570a08f5e293205eab12]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='MuiBox-root jss75']"}
-  (Session info: chrome=137.0.7151.103)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (795, 790)
+  (Session info: chrome=137.0.7151.104)
 Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [957fadf56304f2443a419817a10e4d5c, findElement {value=div[class='MuiBox-root jss75'], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.103, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54118}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54118/devtoo..., se:cdpVersion: 137.0.7151.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 957fadf56304f2443a419817a10e4d5c
+Command: [02281ca6f562570a08f5e293205eab12, clickElement {id=f.0471381964F7C80B1864188A8570E53F.d.A192089DE8A5825499979DD47C8C7789.e.268}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60270}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60270/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02281ca6f562570a08f5e293205eab12)] -> xpath: //input[@id='patient-test']//parent :: div]
+Session ID: 02281ca6f562570a08f5e293205eab12
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -381,16 +380,15 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy13.getText(Unknown Source)
-at base.BasePage.getValueFromText(BasePage.java:56)
-at pages.HomePage.getSubTotalValue(HomePage.java:54)
-at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:42)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+at base.BasePage.clickToElemennt(BasePage.java:39)
+at pages.HomePage.testCostCalculator(HomePage.java:49)
+at testCases.DashBoardTest.addTestFromDropDown(DashBoardTest.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -419,11 +417,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addTestFromDropDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@1500e009]" started-at="2025-06-11T21:07:16 IST" name="tearDown" finished-at="2025-06-11T21:07:16 IST" duration-ms="389" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.DashBoardTest@3956b302]" started-at="2025-06-16T12:46:04 IST" name="tearDown" finished-at="2025-06-16T12:46:04 IST" duration-ms="449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

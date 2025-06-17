@@ -1,6 +1,8 @@
 package testCases;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -10,11 +12,11 @@ import pages.LoginPage;
 import utilities.DataUtil;
 
 public class DashBoardTest extends BaseTest {
-	private static final boolean flase = false;
+	
 	SoftAssert softAssert = new SoftAssert();
 	HomePage home = new HomePage(driver);
 	
-	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp",enabled=flase)
+	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp",enabled= false)
 	public void logedinToDashboard(String username, String password, String browserName, String expectedTitle ) {
 		
 		setup(browserName);
@@ -35,6 +37,7 @@ public class DashBoardTest extends BaseTest {
 		log.info(browserName+"Browser is opening....");
 		LoginPage login =new LoginPage(driver);
 		login.doLogin(username, password);
+		
 		home.testCostCalculator(testName, discount);
 		log.info("test and Discount selected");
 		int actualPrice = home.getToataPriceFromDropdownTest();

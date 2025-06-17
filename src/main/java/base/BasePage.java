@@ -25,6 +25,7 @@ public class BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
+	
 	@FindBy(xpath = "//div[@class='title']")
 	public static WebElement pagetitle;
 
@@ -83,13 +84,13 @@ public class BasePage {
 	public void scrollDownToSpecificElement(WebElement element) {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", element);
+		js.executeScript("arguments[0].scrollIntoView(false);", element);
 	}
 
 	public void scrollDownToButtomOfThePage() {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
 	

@@ -1,7 +1,10 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+
+import java.time.Duration;
 import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import base.BasePage;
@@ -38,15 +41,18 @@ public class HomePage extends BasePage {
 
 	public void testCostCalculator(String testName, String discountpercentage) {
 
-		scrollDownToButtomOfThePage();
-		explisiteWait(addTest);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+		//scrollDownToSpecificElement(totalvalue);
+		
+		//explisiteWait(addTest);
 		clickToElemennt(addTest);
 		selectlementFromDropdown(testdropdownpotions, testName);
 		clickToElemennt(addDiscount);
 		selectlementFromDropdown(discountdropdownoptions, discountpercentage);
 	}
 
-	@FindBy(css = "div[class='MuiBox-root jss75']")
+	@FindBy(xpath = "//div[@class='MuiBox-root jss201']")
 	public static WebElement subtotalvalue;
 
 	public String getSubTotalValue() {
@@ -56,7 +62,7 @@ public class HomePage extends BasePage {
 
 	}
 
-	@FindBy(css = "div[class='MuiBox-root jss78']")
+	@FindBy(xpath = "//div[@class='MuiBox-root jss204']")
 	public static WebElement totalvalue;
 
 	public String getTotalValue() {
