@@ -57,7 +57,7 @@ public class HomePage extends BasePage {
 
 	public String getSubTotalValue() {
 
-		scrollDownToButtomOfThePage();
+		//scrollDownToButtomOfThePage();
 		return getValueFromText(subtotalvalue);
 
 	}
@@ -67,7 +67,7 @@ public class HomePage extends BasePage {
 
 	public String getTotalValue() {
 
-		scrollDownToButtomOfThePage();
+		//scrollDownToButtomOfThePage();
 		return getValueFromText(totalvalue);
 
 	}

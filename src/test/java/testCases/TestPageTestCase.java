@@ -25,7 +25,8 @@ public class TestPageTestCase extends BaseTest {
 		System.out.println(actualTitle);
 		softAssert.assertEquals(actualTitle, expectedTitle,"Test page title match");
 	}
-	
+
+	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
 	public void verifyManageTestFunctionality(String username, String password, String browserName,String expectedTitle) {
 		setup(browserName);
 		loginPage.doLogin(username, password).getPageTitle();
