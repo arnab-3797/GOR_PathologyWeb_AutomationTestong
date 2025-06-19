@@ -45,7 +45,7 @@ public class HomePage extends BasePage {
 	
 		//scrollDownToSpecificElement(totalvalue);
 		
-		//explisiteWait(addTest);
+		//explicitWait(addTest);
 		clickToElemennt(addTest);
 		selectlementFromDropdown(testdropdownpotions, testName);
 		clickToElemennt(addDiscount);
@@ -57,7 +57,7 @@ public class HomePage extends BasePage {
 
 	public String getSubTotalValue() {
 
-		//scrollDownToButtomOfThePage();
+		//scrollDownToBottomOfThePage();
 		return getValueFromText(subtotalvalue);
 
 	}
@@ -67,7 +67,7 @@ public class HomePage extends BasePage {
 
 	public String getTotalValue() {
 
-		//scrollDownToButtomOfThePage();
+		//scrollDownToBottomOfThePage();
 		return getValueFromText(totalvalue);
 
 	}
@@ -76,8 +76,8 @@ public class HomePage extends BasePage {
 	public static List<WebElement> selectedTest;
 
 	public int getToataPriceFromDropdownTest() {
-		int sumofprice = getSumOfNumberFromString(selectedTest);
-		return sumofprice;
+		int sumOfPrice = getSumOfNumberFromString(selectedTest);
+		return sumOfPrice;
 	}
 
 }

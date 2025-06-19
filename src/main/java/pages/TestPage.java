@@ -15,11 +15,20 @@ public class TestPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	@FindBy(xpath = "//a[@href='/tests']/div")
+	public static WebElement testtab;
+
+	public void goToTestTab(){
+
+		clickToElemennt(testtab);
+	}
+
 	@FindBy(xpath = "//*[text()='Manage Tests']")
 	private static WebElement manageTest;
 
 	@FindBy(xpath = "//a[contains(@href,'/patients/add')]")
 	private static WebElement addtests;
+
 
 	public ManageTestsPage manageTest() {
 
@@ -42,7 +51,10 @@ public class TestPage extends BasePage {
 	public String searchFunctionality(String patientName) {
 
 		searchinputfield.clear();
+		logger.info("clear the search field");
 		writeText(searchinputfield, patientName);
+		logger.info("Write Patient name to the ");
+
 
 		String patient = null;
 		for (WebElement result : namecelldata) {
@@ -50,6 +62,7 @@ public class TestPage extends BasePage {
 			if (result.getText().toLowerCase().contains(patientName.toLowerCase())) {
 
 				patient = result.getText();
+				logger.info("patient name found: "+patient);
 				break;
 			}
 		}

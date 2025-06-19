@@ -21,7 +21,7 @@ public class TestPageTestCase extends BaseTest {
 		setup(browserName);
 		loginPage = new LoginPage(driver);
 		String actualTitle = loginPage.doLogin(username, password).getPageTitle();
-		log.info("Logde in to GOR.." + actualTitle);
+		log.info("Logged in to GOR.." + actualTitle);
 		System.out.println(actualTitle);
 		softAssert.assertEquals(actualTitle, expectedTitle,"Test page title match");
 	}
@@ -30,9 +30,23 @@ public class TestPageTestCase extends BaseTest {
 	public void verifyManageTestFunctionality(String username, String password, String browserName,String expectedTitle) {
 		setup(browserName);
 		loginPage.doLogin(username, password).getPageTitle();
-		
+
+		testpage.goToTestTab();
 		String actualTitle = testpage.manageTest().getPageTitle();
 		softAssert.assertEquals(actualTitle, expectedTitle,"Test page title match");
+	}
+
+	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
+	public void verifyTheSearchResultMatching(String username, String password, String browserName,String patientName,String expectedResult){
+
+		setup(browserName);
+		loginPage.doLogin(username, password).getPageTitle();
+
+		String actualResult = testpage.searchFunctionality(patientName);
+		log.info("search is completed...");
+		softAssert.assertEquals(actualResult,expectedResult,"Title is not matching");
+
+		softAssert.assertAll("Verification failed");
 	}
 
 }

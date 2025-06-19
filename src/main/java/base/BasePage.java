@@ -2,45 +2,50 @@ package base;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.openqa.selenium.JavascriptException;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
 	public static WebDriver driver;
+	protected static final Logger logger = (Logger) LogManager.getLogger(BasePage.class);
+
 
 	public BasePage(WebDriver driver) {
 
 		BasePage.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
 	
 	@FindBy(xpath = "//div[@class='title']")
 	public static WebElement pagetitle;
 
 	public String getPageTitle() {
 
+		logger.info("Title of the page getting.....");
 		return getValueFromText(pagetitle);
 	}
 
 	public void clickToElemennt(WebElement element) {
 
 		element.click();
+		logger.info(element +" is clicked.");
 	}
 
 	public void writeText(WebElement element, String text) {
+
 		element.sendKeys(text);
+		logger.info(text +" test is typing......");
 	}
 
 	public void selectlementFromDropdown(List<WebElement> dropdownpotions, String optionname) {
@@ -57,7 +62,10 @@ public class BasePage {
 
 	public String getValueFromText(WebElement element) {
 
-		return element.getText();
+		String text =element.getText();
+		logger.info(text + " is the text message");
+		return text;
+
 
 	}
 
@@ -84,20 +92,24 @@ public class BasePage {
 	public void scrollDownToSpecificElement(WebElement element) {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		logger.info("Javascript is initializing.");
 		js.executeScript("arguments[0].scrollIntoView(false);", element);
+		logger.info("scrolling is done");
 	}
 
-	public void scrollDownToButtomOfThePage() {
+	public void scrollDownToBottomOfThePage() {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		logger.info("Javascript is initializing.");
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		logger.info("Scrolled to bottom of the page");
 	}
 
 	
-	public void explisiteWait(WebElement element) {
+	public void explicitWait(WebElement element) {
 		
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		driverWait.until(ExpectedConditions.elementToBeClickable(element));
-		
+		logger.info("Wait for 5 sec....");
 	}
 }
