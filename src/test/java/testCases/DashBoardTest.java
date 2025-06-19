@@ -14,16 +14,17 @@ import utilities.DataUtil;
 public class DashBoardTest extends BaseTest {
 	
 	SoftAssert softAssert = new SoftAssert();
-	HomePage home = new HomePage(driver);
+
 	
 	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp",enabled= false)
 	public void logedinToDashboard(String username, String password, String browserName, String expectedTitle ) {
 		
 		setup(browserName);
-		log.info(browserName+"Browser is opening....");
 		LoginPage login =new LoginPage(driver);
+		HomePage home = new HomePage(driver);
+		log.info(browserName+"Browser is opening....");
 		login.doLogin(username, password);
-		log.info("user loged in to dashboard");
+		log.info("user logged in to dashboard");
 		String actualTitle = home.getPageTitle();
 		softAssert.assertEquals(actualTitle, expectedTitle,"Dashboard does not title match");
 		softAssert.assertAll();
@@ -34,8 +35,9 @@ public class DashBoardTest extends BaseTest {
 	public void addTestFromDropDown(String username,String password ,String browserName, String testName, String discount ) {
 		
 		setup(browserName);
-		log.info(browserName+"Browser is opening....");
 		LoginPage login =new LoginPage(driver);
+		HomePage home = new HomePage(driver);
+		log.info(browserName+"Browser is opening....");
 		login.doLogin(username, password);
 		
 		home.testCostCalculator(testName, discount);

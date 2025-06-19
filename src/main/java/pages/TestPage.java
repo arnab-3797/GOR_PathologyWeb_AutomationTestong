@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -51,10 +52,11 @@ public class TestPage extends BasePage {
 	public String searchFunctionality(String patientName) {
 
 		searchinputfield.clear();
-		logger.info("clear the search field");
+		//logger.info("clear the search field");
 		writeText(searchinputfield, patientName);
-		logger.info("Write Patient name to the ");
+		//logger.info("Write Patient name to the ");
 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		String patient = null;
 		for (WebElement result : namecelldata) {
@@ -62,7 +64,7 @@ public class TestPage extends BasePage {
 			if (result.getText().toLowerCase().contains(patientName.toLowerCase())) {
 
 				patient = result.getText();
-				logger.info("patient name found: "+patient);
+				//logger.info("patient name found: "+patient);
 				break;
 			}
 		}
