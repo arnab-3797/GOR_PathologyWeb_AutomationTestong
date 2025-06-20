@@ -19,9 +19,10 @@ public class TestPage extends BasePage {
 	@FindBy(xpath = "//a[@href='/tests']/div")
 	public static WebElement testtab;
 
-	public void goToTestTab(){
+	public TestPage goToTestTab(){
 
 		clickToElemennt(testtab);
+		return TestPage.this;
 	}
 
 	@FindBy(xpath = "//*[text()='Manage Tests']")

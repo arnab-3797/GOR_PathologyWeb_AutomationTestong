@@ -24,10 +24,10 @@ public class AddPatient extends BasePage {
 	
 	
 	public void addPatientContactDetails(String name, String emailId, String phoneNumber) {
-		
-		namebox.sendKeys(name);
-		emailbox.sendKeys(emailId);
-		phonenumberbox.sendKeys(phoneNumber);
+
+		writeText(namebox,name);
+		writeText(emailbox,emailId);
+		writeText(phonenumberbox,phoneNumber);
 		
 	}
 	

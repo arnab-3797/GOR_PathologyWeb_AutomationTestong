@@ -21,10 +21,13 @@ public class TestPageTestCase extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		TestPage testpage = new TestPage(driver);
 
-		String actualTitle = loginPage.doLogin(username, password).getPageTitle();
+		loginPage.doLogin(username, password);
+		String actualTitle = testpage.goToTestTab().getPageTitle();
+		//String actualTitle = testpage.getPageTitle();
 		log.info("Logged in to GOR.." + actualTitle);
 		System.out.println(actualTitle);
 		softAssert.assertEquals(actualTitle, expectedTitle,"Test page title match");
+		softAssert.assertAll();
 	}
 
 	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
@@ -39,6 +42,7 @@ public class TestPageTestCase extends BaseTest {
 		testpage.goToTestTab();
 		String actualTitle = testpage.manageTest().getPageTitle();
 		softAssert.assertEquals(actualTitle, expectedTitle,"Test page title match");
+		softAssert.assertAll();
 	}
 
 	@Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
