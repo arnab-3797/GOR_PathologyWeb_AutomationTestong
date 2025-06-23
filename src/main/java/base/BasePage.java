@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -62,9 +63,7 @@ public class BasePage {
 
 	public String getValueFromText(WebElement element) {
 
-		String text =element.getText();
-
-		return text;
+        return element.getText();
 
 
 	}
@@ -109,7 +108,12 @@ public class BasePage {
 	public void explicitWait(WebElement element) {
 		
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		driverWait.until(ExpectedConditions.elementToBeClickable(element));
+		driverWait.until(ExpectedConditions.visibilityOf(element));
 		//logger.info("Wait for 5 sec....");
+	}
+
+	public String getAlertMsg(){
+		Alert alert = driver.switchTo().alert();
+		return alert.getText();
 	}
 }

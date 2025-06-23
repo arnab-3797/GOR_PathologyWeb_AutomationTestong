@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import base.BasePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AddPatient extends BasePage {
 
@@ -13,11 +14,11 @@ public class AddPatient extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy(xpath="//input[@name=\"name\"]")
+	@FindBy(xpath="//input[@name= 'name']")
 	private static WebElement namebox;
-	@FindBy(xpath="")
+	@FindBy(xpath="//input[@name= 'email']")
 	private static WebElement emailbox;
-	@FindBy(xpath="")
+	@FindBy(xpath="//input[@name= 'phone']")
 	private static WebElement phonenumberbox;
 	
 	
@@ -27,8 +28,8 @@ public class AddPatient extends BasePage {
 
 		writeText(namebox,name);
 		writeText(emailbox,emailId);
-		writeText(phonenumberbox,phoneNumber);
-		
+		//writeText(phonenumberbox,phoneNumber);
+		phonenumberbox.sendKeys(phoneNumber);
 	}
 	
 	@FindBy(xpath="//span[text()='cancel'] /ancestor ::button")
@@ -40,12 +41,23 @@ public class AddPatient extends BasePage {
 		return new TestPage(driver);
 	}
 	
-	@FindBy(xpath="//span[@class='MuiButton-label jss521' and text()='General Details']")
-	public static WebElement genaraldetailsbtn;
-	public GenaralDetailsPage addGenaralDetailsOfPatient() {
-		genaraldetailsbtn.click();
+	@FindBy(xpath="//span[contains(@class,'MuiButton-label') and text()='General Details']//parent::button")
+	public static WebElement generaldetailsbtn;
+
+	public GenaralDetailsPage addGeneralDetailsOfPatient() {
+
+		//explicitWait(generaldetailsbtn);
+		generaldetailsbtn.click();
 		
 		return new GenaralDetailsPage(driver);
+	}
+
+	@FindBy(xpath = "//div[@class='MuiAlert-message']")
+	private static WebElement alert_msg;
+
+	public String getAlertMsg(){
+
+		return getValueFromText(alert_msg);
 	}
 
 }
