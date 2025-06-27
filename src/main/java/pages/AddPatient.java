@@ -60,4 +60,11 @@ public class AddPatient extends BasePage {
 		return getValueFromText(alert_msg);
 	}
 
+	@FindBy(xpath = "//p[contains(@class,'MuiFormHelperText-root MuiFormHelperText-contained')]")
+	private static WebElement alertText;
+	public String getAlertText(){
+
+		return  getValueFromText(alertText);
+	}
+
 }

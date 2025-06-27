@@ -77,14 +77,64 @@ public class AddPatientTestCases extends BaseTest {
         testpage.goToTestTab().addNewPatientTest();
         log.info("Navigate to the Add New Patient's Page...");
 
+        System.out.println(phonenumber);
         addPatient.addPatientContactDetails(name,email,phonenumber);
         log.info("Fill the add patient form with- "+name+","+email+","+phonenumber);
         addPatient.addGeneralDetailsOfPatient();
         log.info("clicking on General Details ofnpatient button..... ");
         String actualMsg = addPatient.getAlertMsg();
         softAssert.assertEquals(actualMsg, expectedMsg,"Tilted is not matching: "+ actualMsg);
+        captureScreenShots();
         softAssert.assertAll();
 
+
+    }
+
+    @Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
+    public void verify_WithoutPhone_TestCase(String username, String password, String browserName,String name, String email, String phonenumber, String expectedMsg){
+
+
+        setup(browserName);
+        log.info(browserName +" Browser is initialized");
+        login = new LoginPage(driver);
+        patient = new AddPatient(driver);
+        testpage = new TestPage(driver);
+        addPatient = new AddPatient(driver);
+        SoftAssert softAssert = new SoftAssert();
+
+        login.doLogin(username, password);
+        log.info("logged in with: "+ username+" "+password);
+        testpage.goToTestTab().addNewPatientTest();
+        log.info("Navigate to the Add New Patient's Page...");
+
+        System.out.println(phonenumber);
+        addPatient.addPatientContactDetails(name,email,phonenumber);
+        log.info("Fill the add patient form with- "+name+","+email+","+phonenumber);
+        addPatient.addGeneralDetailsOfPatient();
+        log.info("clicking on General Details ofnpatient button..... ");
+        String actualMsg = addPatient.getAlertText();
+        softAssert.assertEquals(actualMsg, expectedMsg,"Tilted is not matching: "+ actualMsg);
+        captureScreenShots();
+        softAssert.assertAll();
+
+
+    }
+    @Test(dataProviderClass = DataUtil.class, dataProvider= "dp")
+    public void verify_cancelBtn(String username, String password, String browserName,String expectedTitle){
+
+        setup(browserName);
+        log.info(browserName +" Browser is initialized");
+        login = new LoginPage(driver);
+        patient = new AddPatient(driver);
+        testpage = new TestPage(driver);
+        addPatient = new AddPatient(driver);
+        SoftAssert softAssert = new SoftAssert();
+
+        login.doLogin(username, password);
+        log.info("logged in with: "+ username+" "+password);
+        String actualTitle = testpage.goToTestTab().addNewPatientTest().cancelAddPatientContactDetails().getPageTitle();
+        log.info("Navigate to the Add New Patient's Page...");
+        softAssert.assertEquals(actualTitle,expectedTitle);
 
     }
 
