@@ -147,15 +147,23 @@ public class AddTestToPatientPage extends BasePage {
 		deleteeuipmentbtn.click();
 	}
 	
-	public GenaralDetailsPage backBtnAction() {
+	public GeneralDetailsPage backBtnAction() {
 		backbtn.click();
-		return new GenaralDetailsPage(driver);
+		return new GeneralDetailsPage(driver);
 	}
 	
 	public TestPage addPatientAction() {
 		
 		addpatientbtn.click();
 		return new TestPage(driver);
+	}
+
+	@FindBy(xpath = "//span[contains(@class,'MuiStepLabel-labelContainer')]//span[contains(text(),'Add Tests')]")
+	private static WebElement add_patient_progressBar;
+
+	public String getAddPatientProgressBarText(){
+		return getValueFromText(add_patient_progressBar);
+
 	}
 
 }

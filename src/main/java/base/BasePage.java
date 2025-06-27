@@ -2,11 +2,9 @@ package base;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -37,7 +35,7 @@ public class BasePage {
 		return getValueFromText(pagetitle);
 	}
 
-	public void clickToElemennt(WebElement element) {
+	public void clickToElement(WebElement element) {
 
 		element.click();
 
@@ -49,11 +47,11 @@ public class BasePage {
 
 	}
 
-	public void selectlementFromDropdown(List<WebElement> dropdownpotions, String optionname) {
+	public void selectElementFromDropdown(List<WebElement> dropdownpotions, String optionname) {
 
 		for (WebElement dropdownoption : dropdownpotions) {
 			if (dropdownoption.getText().trim().equalsIgnoreCase(optionname)) {
-				clickToElemennt(dropdownoption);
+				clickToElement(dropdownoption);
 				break;
 				// text = dropdownoption.getText();
 			}

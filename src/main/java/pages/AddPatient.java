@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import base.BasePage;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AddPatient extends BasePage {
 
@@ -24,12 +23,13 @@ public class AddPatient extends BasePage {
 	
 	
 	
-	public void addPatientContactDetails(String name, String emailId, String phoneNumber) {
+	public AddPatient addPatientContactDetails(String name, String emailId, String phoneNumber) {
 
 		writeText(namebox,name);
 		writeText(emailbox,emailId);
 		//writeText(phonenumberbox,phoneNumber);
 		phonenumberbox.sendKeys(phoneNumber);
+		return AddPatient.this;
 	}
 	
 	@FindBy(xpath="//span[text()='cancel'] /ancestor ::button")
@@ -44,12 +44,12 @@ public class AddPatient extends BasePage {
 	@FindBy(xpath="//span[contains(@class,'MuiButton-label') and text()='General Details']//parent::button")
 	public static WebElement generaldetailsbtn;
 
-	public GenaralDetailsPage addGeneralDetailsOfPatient() {
+	public GeneralDetailsPage addGeneralDetailsOfPatient() {
 
 		//explicitWait(generaldetailsbtn);
 		generaldetailsbtn.click();
 		
-		return new GenaralDetailsPage(driver);
+		return new GeneralDetailsPage(driver);
 	}
 
 	@FindBy(xpath = "//div[@class='MuiAlert-message']")

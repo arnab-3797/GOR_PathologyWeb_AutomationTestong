@@ -46,10 +46,10 @@ public class HomePage extends BasePage {
 		//scrollDownToSpecificElement(totalvalue);
 		
 		//explicitWait(addTest);
-		clickToElemennt(addTest);
-		selectlementFromDropdown(testdropdownpotions, testName);
-		clickToElemennt(addDiscount);
-		selectlementFromDropdown(discountdropdownoptions, discountpercentage);
+		clickToElement(addTest);
+		selectElementFromDropdown(testdropdownpotions, testName);
+		clickToElement(addDiscount);
+		selectElementFromDropdown(discountdropdownoptions, discountpercentage);
 	}
 
 	@FindBy(xpath = "//div[@class='MuiBox-root jss201']")

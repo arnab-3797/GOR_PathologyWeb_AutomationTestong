@@ -21,7 +21,7 @@ public class TestPage extends BasePage {
 
 	public TestPage goToTestTab(){
 
-		clickToElemennt(testtab);
+		clickToElement(testtab);
 		return TestPage.this;
 	}
 

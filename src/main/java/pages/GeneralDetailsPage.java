@@ -2,15 +2,17 @@ package pages;
 
 import java.util.List;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import base.BasePage;
 
-public class GenaralDetailsPage extends BasePage {
+public class GeneralDetailsPage extends BasePage {
 	
-	public GenaralDetailsPage(WebDriver driver) {
+	public GeneralDetailsPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -30,51 +32,52 @@ public class GenaralDetailsPage extends BasePage {
 	
 	@FindBy(xpath="//input[@name='age']")
 	public static WebElement agebox;
-	
+
+	public GeneralDetailsPage secondaryDetailsFields(String height, String weight, String age, String gender) {
+
+		writeText(heightbox,height);
+		writeText(weightbox,weight);
+		clickToElement(genderdropdownbox);
+		selectElementFromDropdown(genderdropdownoption,gender);
+		writeText(agebox,age);
+
+		return GeneralDetailsPage.this;
+	}
+
 	@FindBy(xpath="//input[@name='systolic']")
 	public static WebElement systolicbox;
-	
+
 	@FindBy(xpath="//input[@name='diastolic']")
 	public static WebElement diastolicbox;
-	
+
+	public GeneralDetailsPage bloodPressure(String systolicbloodpressure, String diastolocbloodpressure) {
+
+		writeText(systolicbox,systolicbloodpressure);
+		writeText(diastolicbox,diastolocbloodpressure);
+
+		return GeneralDetailsPage.this;
+	}
+
 	@FindBy(xpath="//span[text()='back']/ancestor ::button")
 	public static WebElement backbtn;
-	
-	@FindBy(xpath="//span[text()='Add Tests']/ancestor ::button")
-	public static WebElement addtestbtn;
-	
-	
-	public void secondaryDetailsFields(String height, String weight, String age, String gender) {
-		
-		heightbox.sendKeys(height);
-		weightbox.sendKeys(weight);
-		genderdropdownbox.click();
-		for(WebElement option : genderdropdownoption) {
-			if(option.getText().trim().equalsIgnoreCase(gender)) {
-				option.click();
-			}
-		}
-		
-		agebox.sendKeys(age);
-	}
-	
-	public void bloodPressure(String systolicbloodpressure, String diastolocbloodpressure) {
-		
-		agebox.sendKeys(systolicbloodpressure);
-		diastolicbox.sendKeys(diastolocbloodpressure);
-		
-	}
-	
+
 	public AddPatient backBtn() {
 		
 		backbtn.click();
 		
 		return new AddPatient(driver);
 	}
-	
+
+	@FindBy(xpath="//span[text()='Add Tests']/ancestor ::button")
+	public static WebElement addtestbtn;
+
 	public AddTestToPatientPage addTestToPatient() {
-		
-		addtestbtn.click();
+		try {
+			clickToElement(addtestbtn);
+		} catch (ElementClickInterceptedException e) {
+			// Use JavaScript click as fallback
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", addtestbtn);
+		}
 		return new AddTestToPatientPage(driver);
 	}
 	
